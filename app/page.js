@@ -1,9 +1,13 @@
-import Navbar from "../frontendComponent/Navbar"
+import { Suspense } from "react";
+import Navbar from "../frontendComponent/Navbar";
+import Loading from "./loading";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-    </main>
-  )
+    <Suspense fallback={<Loading />}>
+      <main>
+        <Navbar />
+      </main>
+    </Suspense>
+  );
 }
