@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+// import styles from './Navbar.module.css'
 
 function NavBar() {
   return (
@@ -11,9 +12,9 @@ function NavBar() {
           <span className="ml-3 text-xl">Hostellers</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Home</a>
-          <a className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">About</a>
-          <a className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Service</a>
+          <Link href='/' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Home</Link>
+          <Link href='/about' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">About</Link>
+          <Link href='/features' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Features</Link>
         </nav>
 
         {/* drop down start */}

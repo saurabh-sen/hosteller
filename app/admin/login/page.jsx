@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Login from "../../../frontendComponent/Login"
 const Page = () => {
   return (
-    <div> admin login</div>
+    <>
+    <Login />
+    </>
   )
 }
 
