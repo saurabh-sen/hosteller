@@ -1,7 +1,13 @@
+import Landing_page from "@/frontendComponent/Landing_page/Landing_page"
+import Footer from "@/frontendComponent/Footer/Footer"
+// import Button from "@/frontendComponent/Button/Button";
 export default function Home() {
+  console.log(Footer);
   return (
     <main>
-      <h1 className='text-4xl text-pink-500'>Next.js + Google Fonts</h1>
+      <Landing_page/>
+      <Footer/>
+      
     </main>
   )
 }
