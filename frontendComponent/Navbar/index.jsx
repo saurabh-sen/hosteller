@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function NavBar() {
   return (
-    <header className="text-gray-400 bg-gray-800 body-font">
+    <header className="text-gray-400 bg-gray-700 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
           <svg color="white" xmlns="http://www.w3.org/2000/svg"  className="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 640 512">
@@ -22,14 +22,18 @@ function NavBar() {
         <div className="relative inline-block text-left group mt-4 md:mt-0">
           <div className="">
             {/* inline css for neophormism button */}
-            <button type="button" className="inline-flex items-center bg-gray-800 border-0 focus:outline-none rounded-md text-base w-full justify-center gap-x-1.5 px-3 py-2 font-semibold text-gray-400 hover:text-gray-300 focus-within:text-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true" style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }} >
+            <button type="button" className="inline-flex items-center border-0 focus:outline-none rounded-md text-base w-full justify-center gap-x-1.5 px-3 py-2 font-semibold text-gray-400 hover:text-gray-300 focus-within:text-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true" 
+            style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
+             >
               Get In
               <svg className="-mr-1 h-5 w-5 text-gray-400 group-hover:rotate-180 group-focus-within:rotate-180 transition-all duration-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
               </svg>
             </button>
           </div>
-          <div className="hidden group-hover:block group-focus-within:block absolute right-[-77%] sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1" style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}>
+          <div className="hidden group-hover:block group-focus-within:block absolute right-[-77%] sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1" 
+          style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
+          >
             <div className="py-1" role="none">
               <Link href="/student/login" className="text-gray-400 hover:text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-0">Student LogIn/SignUp</Link>
               <Link href="/admin/login" className="text-gray-400 hover:text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-1">Admin LogIn</Link>
