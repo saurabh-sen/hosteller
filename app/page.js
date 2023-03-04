@@ -1,13 +1,21 @@
-import Navbar from "../frontendComponent/Navbar/Navbar"
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import LandingPage from "@/frontendComponent/LandingPage"
+import Footer from "@/frontendComponent/Footer"
+import { Suspense } from "react";
+import Navbar from "../frontendComponent/Navbar";
+import Gallery from "../frontendComponent/Gallery";
+import Loading from "./loading";
+
 export default function Home() {
+  
   return (
-    <main>
-      {/* <h1 className='text-4xl text-pink-500'>Next.js + Google Fonts</h1>   */}
-      <Navbar />
-
-
-    </main>
-  )
+    <Suspense fallback={<Loading />}>
+      <main>
+        <Navbar />
+        <LandingPage/>
+        <Gallery />
+        <Footer/>
+      </main>
+    </Suspense>
+  );
 }
