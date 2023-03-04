@@ -1,8 +1,9 @@
 
-import Landing_page from "@/frontendComponent/Landing_page/Landing_page"
-import Footer from "@/frontendComponent/Footer/Footer"
+import LandingPage from "@/frontendComponent/LandingPage"
+import Footer from "@/frontendComponent/Footer"
 import { Suspense } from "react";
 import Navbar from "../frontendComponent/Navbar";
+import Gallery from "../frontendComponent/Gallery";
 import Loading from "./loading";
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
     <Suspense fallback={<Loading />}>
       <main>
         <Navbar />
-        <Landing_page/>
+        <LandingPage/>
+        <Gallery />
         <Footer/>
       </main>
     </Suspense>

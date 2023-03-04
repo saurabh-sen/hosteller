@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function NavBar() {
   return (
-    <header className="text-gray-400 bg-gray-700 body-font">
+    <header className="text-gray-400 bg-gray-800 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
           <svg color="white" xmlns="http://www.w3.org/2000/svg"  className="w-10 h-10 text-white p-2 bg-red-500 rounded-full" viewBox="0 0 640 512">
@@ -22,7 +22,7 @@ function NavBar() {
         <div className="relative inline-block text-left group mt-4 md:mt-0">
           <div className="">
             {/* inline css for neophormism button */}
-            <button type="button" className="inline-flex items-center border-0 focus:outline-none rounded-md text-base w-full justify-center gap-x-1.5 px-3 py-2 font-semibold text-gray-400 hover:text-gray-300 focus-within:text-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true" 
+            <button type="button" className="inline-flex items-center border-0 focus:outline-none rounded-xl text-base w-full justify-center gap-x-1.5 px-3 py-2 font-semibold text-gray-400 hover:text-gray-300 focus-within:text-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true" 
             style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
              >
               Get In

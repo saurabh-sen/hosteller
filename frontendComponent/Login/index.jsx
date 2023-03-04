@@ -15,7 +15,7 @@ const index = ({ handleSubmit, student }) => {
             <div>
               <h1 className="text-2xl font-semibold">WelCome back, Please enter your credentials below</h1>
               {
-                student && <p className="text-sm font-semibold">Don&apos;t have an account? <Link href='/student/signup' className='underline text-[#0048b8]'>Create new</Link></p>
+                student && <p className="text-sm font-semibold">Don&apos;t have an account? <Link href='/student/signup' className='underline text-[#0048b8]'>Click Here to apply!</Link></p>
               }
             </div>
             <div className="divide-y divide-gray-200">
