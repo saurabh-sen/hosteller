@@ -14,7 +14,7 @@ function NavBar({login}) {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <Link href='/' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Home</Link>
           <Link href='/about' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">About</Link>
-          <Link href='/features' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Features</Link>
+          <Link href='/facilities' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Facilities</Link>
         </nav>
 
         {/* drop down start */}
@@ -38,7 +38,7 @@ function NavBar({login}) {
             style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
              >
               LogOut
-              <svg className="-mr-1 h-5 w-5 text-gray-400 transition-all duration-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg className="-mr-1 h-5 w-5 text-gray-400 transition-all duration-300 -rotate-90" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
               </svg>
             </button>

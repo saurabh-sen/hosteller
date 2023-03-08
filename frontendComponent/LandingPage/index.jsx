@@ -4,17 +4,17 @@ import bg from '../../public/landingpage.svg'
 const LandingPage = () => {
     return (
         <section id='landing' className="bg-gray-700 text-gray-400 ">
-            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center justify-center">
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                     <Image className="object-cover object-center rounded" alt="hero" src={bg} width={600} height={720}
                     />
                 </div>
-                <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <div className="md:pl-16 flex flex-col md:text-left text-center">
                     <h1 className="title-font sm:text-5xl text-2xl mb-4 font-medium text-gray-400">Far From Home
                         <br className="" /> Another Home
                     </h1>
                     <p className="mb-8 leading-relaxed text-base"> In Budget, with high class services. </p>
-                    <div className="flex justify-center">
+                    <div className="learn__more__button">
                         <button className="group learn-more relative inline-block cursor-pointer outline-0 border-0 align-middle bg-transparent w-48 h-auto">
                             <span className="circle group-hover:w-full transition-all duration-500 ease-in-out relative block w-12 h-12 bg-[#282936] rounded-full" aria-hidden="true"
                             style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
