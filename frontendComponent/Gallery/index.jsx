@@ -3,7 +3,7 @@ import React from 'react'
 
 const index = () => {
     return (
-        <section id='gallery' className="text-gray-400 bg-gray-900 body-font">
+        <section id='gallery' className="text-gray-400 bg-gray-800 body-font">
             <div className="container px-5 py-24 mx-auto flex flex-wrap">
                 <div className="flex w-full mb-20 flex-wrap">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font text-white lg:w-1/3 lg:mb-0 mb-4">Hosteller&apos;s Gallery</h1>

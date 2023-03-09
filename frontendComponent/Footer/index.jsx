@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({footerbg1, footerbg2}) => {
   return (
-    <footer className="text-gray-400 bg-gray-700 body-font">
+    <footer className={`text-gray-400 bg-${footerbg1} body-font`}>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex justify-center flex-wrap md:text-left text-center -mb-10 -mx-4">
           <div className="lg:w-1/6 md:w-1/2 w-full px-4 text-center">
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-800">
+      <div className={`bg-${footerbg2}`}>
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-400 text-sm text-center sm:text-left">© 2020 Pixel Perfect Devs —
             <Link href="https://github.com/saurabh-sen/hosteller" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@PixelPerfectDevs</Link>

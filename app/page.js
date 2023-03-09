@@ -14,7 +14,7 @@ export default function Home() {
         <Navbar />
         <LandingPage/>
         <Gallery />
-        <Footer/>
+        <Footer footerbg1={"gray-700"} footerbg2={"gray-800"}/>
       </main>
     </Suspense>
   );

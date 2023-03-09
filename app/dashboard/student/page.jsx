@@ -12,7 +12,7 @@ const page = () => {
         <Overview />
         <StudentEase />
         <Events />
-        <Footer />
+        <Footer footerbg1="gray-800" footerbg2="gray-700" />
     </div>
   )
 }
