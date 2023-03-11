@@ -5,8 +5,12 @@ import { Suspense } from "react";
 import Navbar from "../frontendComponent/Navbar";
 import Gallery from "../frontendComponent/Gallery";
 import Loading from "./loading";
+import { connectFunction } from "@/backendComponent/helperfunctions/connecttodb"
 
-export default function Home() {
+export default async function Home() {
+
+  const data = await connectFunction();
+  if(!data.isConnected) return <h1>Something broke at backend related to mongodb {data.error}</h1>
   
   return (
     <Suspense fallback={<Loading />}>
