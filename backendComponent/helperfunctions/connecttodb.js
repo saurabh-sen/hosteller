@@ -1,3 +1,5 @@
+import clientPromise from "../connection";
+
 export const connectFunction = async () => {
     try {
       const client = await clientPromise;
