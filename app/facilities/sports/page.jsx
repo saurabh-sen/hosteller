@@ -3,7 +3,7 @@ import NavBar from "@/frontendComponent/Navbar";
 import Image from "next/image";
 import Footer from "@/frontendComponent/Footer";
 
-const App = () => {
+const Page = () => {
     return (
         <div>
             <NavBar />
@@ -45,4 +45,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Page;

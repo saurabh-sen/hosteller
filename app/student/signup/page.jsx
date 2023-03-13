@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import styles from '../../../frontendComponent/Login/login.module.css'
 import { studentsignupdata } from "@/backendComponent/helperfunctions/studentsignupdata"
 
-const page = () => {
+const Page = () => {
 
   const [signUpData, setSignUpData] = useState({
     name: '',
@@ -69,4 +69,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

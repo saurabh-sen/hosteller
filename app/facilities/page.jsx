@@ -3,7 +3,7 @@ import NavBar from '@/frontendComponent/Navbar'
 import Link from 'next/link'
 import Footer from '@/frontendComponent/Footer'
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <NavBar />
@@ -89,4 +89,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

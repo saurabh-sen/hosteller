@@ -2,6 +2,19 @@
 import Link from "next/link";
 // import styles from './Navbar.module.css'
 
+const DashboardLink = ({login}) => {
+    switch (login) {
+      case "student":
+        return <Link href='/dashboard/student' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Dashboard</Link>;
+      case "messincharge":
+        return <Link href='/dashboard/messincharge' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Dashboard</Link>
+      case "admin":
+        return <Link href='/dashboard/admin' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Dashboard</Link>
+      default:
+        return "";
+    }
+}
+
 function NavBar({login}) {
   return (
     <header className="text-gray-400 bg-gray-800 body-font">
@@ -15,6 +28,7 @@ function NavBar({login}) {
           <Link href='/' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Home</Link>
           <Link href='/about' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">About</Link>
           <Link href='/facilities' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Facilities</Link>
+          <DashboardLink login={login} />
         </nav>
 
         {/* drop down start */}
