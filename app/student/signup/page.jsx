@@ -14,10 +14,11 @@ const page = () => {
     password: ''
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const { name, email, phone, rollno, password } = signUpData;
     if (name === '' || email === '' || phone === '' || rollno === '' || password === '') {
-      alert('Please fill all the fields')
+      alert('Please fill all the fields');
     } else {
       studentsignupdata(signUpData)
     }
@@ -58,7 +59,7 @@ const page = () => {
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">
-                  <button className={styles.login__button} onClick={() => handleSubmit()}>Sign Up</button>
+                  <button className={styles.login__button} onClick={(e)=>handleSubmit(e)}>Sign Up</button>
                 </div>
               </div>
             </div>
@@ -69,4 +70,4 @@ const page = () => {
   )
 }
 
-export default page
+export default page;

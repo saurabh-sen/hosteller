@@ -11,9 +11,18 @@ const index = ({ studentlogindata, student }) => {
     role: "",
   });
 
-  const submitButton = () => {
+  const submitButton = async(e) => {
+    e.preventDefault();
     if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
-    studentlogindata(authInfo);
+    const res=await studentlogindata(authInfo);
+    const data=res.msg[0];
+    if(data!=null){
+      console.log(data);
+      alert("Data Added \n"+JSON.stringify(data));
+    }
+    else{
+      alert("Credentials not found");
+    }
   }
 
   return (
@@ -52,7 +61,7 @@ const index = ({ studentlogindata, student }) => {
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">
-                  <button className={styles.login__button} onClick={() => submitButton()}>Submit</button>
+                  <button className={styles.login__button} onClick={(e) => submitButton(e)}>Submit</button>
                 </div>
               </div>
             </div>

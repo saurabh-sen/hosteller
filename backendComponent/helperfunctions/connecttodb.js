@@ -1,11 +1,12 @@
 export const connectFunction = async () => {
     try {
       const client = await clientPromise;
-      const db = client.db("Hosteller_DB")
+      const db = await client.db("Hosteller_DB")
       const collection = await db.collection("general");
-      const myDoc = await collection.find({})
-             .limit(10)
-             .toArray();
+      const myDoc = await collection.findOne({connect:'true'});
+      if(myDoc.connect==='true') {
+        console.log("!!!! Database Successfully Connected !!!!");
+      }
       return {
         isConnected: true,
         data: "connected to mongodb",
