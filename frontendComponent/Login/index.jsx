@@ -6,11 +6,9 @@ import Alert from "@/frontendComponent/Alert"
 import { useDispatch} from 'react-redux'
 import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
 
-const Index = ({ studentlogindata, student }) => {
-
+const index = ({ student }) => {
   const dispatch = useDispatch();
-
-  const [authInfo, setAuthInfo] = useState({
+   const [authInfo, setAuthInfo] = useState({
     email: "",
     password: "",
     role: "",
@@ -18,16 +16,28 @@ const Index = ({ studentlogindata, student }) => {
 
   const submitButton = async(e) => {
     e.preventDefault();
-    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
-    const res=await studentlogindata(authInfo);
-    const data=res.msg[0];
-    if(data!=null){
-      console.log(data);
-      alert("Data Added \n"+JSON.stringify(data));
-     // return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
+    if(!student ){
+      if(authInfo.role==="admin" && authInfo.email==="admin@hosteller" && authInfo.password=== "password"){
+        alert("admin logged in");
+      }
+      else if(authInfo.role==="messincharge" && authInfo.email==="messincharge@hosteller" && authInfo.password=== "password"){
+        alert("messincharge logged in");
+      }
+      else{
+        alert("wrong credentials");
+      }
     }
     else{
-      alert("Credentials not found");
+      if((authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
+      const res=await studentlogindata(authInfo);
+      const data=res.msg[0];
+      if(data!=null){
+        console.log(data);
+        alert("Data Added \n"+JSON.stringify(data));
+      }
+      else{
+        alert("Credentials not found");
+      }
     }
   }
 
