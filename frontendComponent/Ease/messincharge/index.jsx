@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <section className='student__ease bg-gray-800'>
       <div className="md:space-x-8 px-5 py-16 mx-auto max-w-6xl">
-        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>Student Ease</h1>
+        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>MESS INCHARGE EASE</h1>
 
         <div className="student__ease__containers flex justify-evenly flex-wrap space-y-4 md:space-y-0">
           <div onClick={() => setShowLeaveModal(prev => !prev)} className="leave__query border border-gray-600 hover:shadow-[-5px_7px_18px_#27cfef] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gradient-to-r from-indigo-400 to-cyan-400 bg-gray-700 space-y-3 cursor-pointer w-[250px] h-[250px] text-center">

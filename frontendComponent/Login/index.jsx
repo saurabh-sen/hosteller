@@ -2,8 +2,13 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './login.module.css'
+import Alert from "@/frontendComponent/Alert"
+import { useDispatch} from 'react-redux'
+import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
 
-const index = ({ studentlogindata, student }) => {
+const Index = ({ studentlogindata, student }) => {
+
+  const dispatch = useDispatch();
 
   const [authInfo, setAuthInfo] = useState({
     email: "",
@@ -12,8 +17,12 @@ const index = ({ studentlogindata, student }) => {
   });
 
   const submitButton = () => {
-    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
+    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === ""){
+      console.log("Please fill all the fields", authInfo);
+      return dispatch(setAlert({ title: "Login Error", message: "Please fill all the fields", type: "error"}));
+    }
     studentlogindata(authInfo);
+    return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
   }
 
   return (
@@ -59,8 +68,9 @@ const index = ({ studentlogindata, student }) => {
           </div>
         </div>
       </div>
+      <Alert />
     </div>
   )
 }
 
-export default index
+export default Index

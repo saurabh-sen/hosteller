@@ -4,7 +4,7 @@ const index = () => {
   return (
     <section className='student__ease bg-gray-800'>
       <div className="md:space-x-8 px-5 py-16 mx-auto max-w-6xl">
-        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>Student Ease</h1>
+        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>STUDENT EASE</h1>
 
         <div className="student__ease__containers flex justify-evenly flex-wrap space-y-4 md:space-y-0">
           <div className="leave__query border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover w-[300px] h-[380px] text-center">
