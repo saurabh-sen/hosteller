@@ -8,6 +8,7 @@ const Page = () => {
   return (
     <>
       <Login studentlogindata={studentlogindata} student={1} />
+      <Login student={1} />
     </>
   )
 }
