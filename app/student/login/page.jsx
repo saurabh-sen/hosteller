@@ -1,9 +1,9 @@
 "use client"
-import React, { useEffect } from 'react'
+import React from 'react'
 import Login from "../../../frontendComponent/Login"
 import { studentlogindata } from "@/backendComponent/helperfunctions/studentlogindata"
 
-const Page = () => {
+const Page = () => { 
 
   return (
     <>

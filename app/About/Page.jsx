@@ -2,7 +2,7 @@ import Footer from '@/frontendComponent/Footer'
 import NavBar from '@/frontendComponent/Navbar'
 import React from 'react'
 
-const about = () => {
+const Page = () => {
   return (
     <section className="about__page">
       <NavBar />
@@ -15,4 +15,4 @@ const about = () => {
   )
 }
 
-export default about
+export default Page

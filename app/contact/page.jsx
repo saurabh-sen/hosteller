@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = () => {
+const Page = () => {
     return (
         <section className="text-gray-400 bg-gray-900 body-font relative min-h-screen">
             <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -46,4 +46,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

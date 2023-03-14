@@ -2,8 +2,13 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './login.module.css'
+import Alert from "@/frontendComponent/Alert"
+import { useDispatch} from 'react-redux'
+import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
 
-const index = ({ studentlogindata, student }) => {
+const Index = ({ studentlogindata, student }) => {
+
+  const dispatch = useDispatch();
 
   const [authInfo, setAuthInfo] = useState({
     email: "",
@@ -19,6 +24,7 @@ const index = ({ studentlogindata, student }) => {
     if(data!=null){
       console.log(data);
       alert("Data Added \n"+JSON.stringify(data));
+     // return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
     }
     else{
       alert("Credentials not found");
@@ -68,8 +74,9 @@ const index = ({ studentlogindata, student }) => {
           </div>
         </div>
       </div>
+      <Alert />
     </div>
   )
 }
 
-export default index
+export default Index

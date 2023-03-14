@@ -16,7 +16,7 @@ const Footer = ({footerbg1, footerbg2}) => {
                 <Link scroll href='#gallery' className="text-gray-400 hover:text-white">Gallery</Link>
               </li>
               <li>
-                <Link href='/features' className="text-gray-400 hover:text-white">Services</Link>
+                <Link href='/facilities' className="text-gray-400 hover:text-white">Facilities</Link>
               </li>
               <li>
                 <Link href='/contact' className="text-gray-400 hover:text-white">Contact</Link>
@@ -33,7 +33,7 @@ const Footer = ({footerbg1, footerbg2}) => {
                 <Link scroll href='#gallery' className="text-gray-400 hover:text-white">Gallery</Link>
               </li>
               <li>
-                <Link href='/features' className="text-gray-400 hover:text-white">Services</Link>
+                <Link href='/facilities' className="text-gray-400 hover:text-white">Facilities</Link>
               </li>
               <li>
                 <Link href='/contact' className="text-gray-400 hover:text-white">Contact</Link>

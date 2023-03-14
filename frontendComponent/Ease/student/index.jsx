@@ -4,10 +4,10 @@ const index = () => {
   return (
     <section className='student__ease bg-gray-800'>
       <div className="md:space-x-8 px-5 py-16 mx-auto max-w-6xl">
-        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>Student Ease</h1>
+        <h1 className='sm:text-3xl md:text-4xl text-2xl my-12 mx-4 text-white font-semibold'>STUDENT EASE</h1>
 
         <div className="student__ease__containers flex justify-evenly flex-wrap space-y-4 md:space-y-0">
-          <div className="leave__query border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover">
+          <div className="leave__query border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover w-[300px] h-[380px] text-center">
             <div className="cover px-6 py-5 rounded-lg bg-gradient-to-r from-indigo-400 to-cyan-400  space-y-3 absolute top-0 left-0 h-full w-full group-hover/cover:hidden hidden sm:flex justify-center items-center flex-col">
               <p className="leave__query__header text-gray-500 text-lg sm:text-xl md:text-3xl font-bold break-words mb-3">
                 A Leave Query
@@ -37,7 +37,7 @@ const index = () => {
               </svg>
             </button>
           </div>
-          <div className="chicken__list border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover">
+          <div className="chicken__list border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover w-[300px] h-[380px] text-center">
             <div className="cover px-6 py-5 rounded-lg bg-gradient-to-r from-violet-200 to-pink-200 space-y-3 absolute top-0 left-0 h-full w-full  group-hover/cover:hidden hidden sm:flex justify-center items-center flex-col">
               <p className="leave__query__header text-gray-500 text-lg sm:text-xl md:text-3xl font-bold break-words mb-3">
                 Want to eat chicken?
@@ -67,7 +67,7 @@ const index = () => {
             </div>
 
           </div>
-          <div className="complaint__box border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover">
+          <div className="complaint__box border border-gray-600 hover:shadow-[8px_5px_28px_#272e3a,-5px_5px_20px_#475468] transition-shadow duration-300 px-6 py-5 rounded-lg bg-gray-700 space-y-3 relative group/cover w-[300px] h-[380px] text-center">
             <div className="cover px-6 py-5 rounded-lg bg-gradient-to-r from-teal-400 to-yellow-200 space-y-3 absolute top-0 left-0 h-full w-full  group-hover/cover:hidden hidden sm:flex justify-center items-center flex-col">
               <p className="leave__query__header text-gray-500 text-lg sm:text-xl md:text-3xl font-bold break-words mb-3">
                 File a Complaint!

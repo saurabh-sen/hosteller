@@ -3,25 +3,49 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from '../../../frontendComponent/Login/login.module.css'
 import { studentsignupdata } from "@/backendComponent/helperfunctions/studentsignupdata"
+import { useDispatch } from 'react-redux'
+import Alert from "@/frontendComponent/Alert"
+import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
 
-const page = () => {
+const Page = () => {
+
+  const dispatch = useDispatch();
 
   const [signUpData, setSignUpData] = useState({
+    profile: '',
     name: '',
     email: '',
     phone: '',
     rollno: '',
-    password: ''
+    transactionId: '',
+    password: '',
   });
 
-  const handleSubmit = async (e) => {
+
+  // submit function
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    const { name, email, phone, rollno, password } = signUpData;
-    if (name === '' || email === '' || phone === '' || rollno === '' || password === '') {
-      alert('Please fill all the fields');
+    const { profile, name, email, phone, rollno, transactionId, password } = signUpData;
+    if ( !profile || name === '' || email === '' || phone === '' || rollno === '' || transactionId === '' || password === '') {
+      return dispatch(setAlert({ title: "SignUp Failed", message: "Please fill all the fields", type: "error"}))
     } else {
       studentsignupdata(signUpData)
+      return dispatch(setAlert({ title: "SignUp Success", message: "You can login when admin confirms your account", type: "success"}))
     }
+  }
+
+  // File change function
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file.type && file.type.indexOf('image') === -1) {
+      console.log('File is not an image.', file.type, file);
+      return;
+    }
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setSignUpData((prev) => prev = {...prev, profile: reader.result})
+    }
+    reader.readAsDataURL(file);
   }
 
   return (
@@ -39,6 +63,10 @@ const page = () => {
             <div className="divide-y divide-gray-200">
               <div className="py-8 text-base leading-6 space-y-8 text-gray-700 sm:text-lg sm:leading-7">
                 <div className="relative">
+                  <input accept="image/jpg, image/jpeg, image/png" onChange={handleFileChange} autoComplete="off" id="profile" name="profile" type="file" className="bg-transparent  peer placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Your profile" />
+                  <label htmlFor="profile" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Your profile Picture</label>
+                </div>
+                <div className="relative">
                   <input onChange={(e) => setSignUpData((prev) => prev = {...prev, name: e.target.value})} autoComplete="off" id="fullname" name="fullname" type="text" className="bg-transparent  peer placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Your Full Name" />
                   <label htmlFor="fullname" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Your Full Name</label>
                 </div>
@@ -55,6 +83,10 @@ const page = () => {
                   <label htmlFor="rollno" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Roll Number</label>
                 </div>
                 <div className="relative">
+                  <input onChange={(e) => setSignUpData((prev) => prev = {...prev, transactionId: e.target.value})} autoComplete="off" id="transactionId" name="transactionId" type="text" className="peer bg-transparent placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="transactionId" />
+                  <label htmlFor="transactionId" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Transaction Id</label>
+                </div>
+                <div className="relative">
                   <input onChange={(e) => setSignUpData((prev) => prev = {...prev, password: e.target.value})} autoComplete="off" id="password" name="password" type="password" className="peer bg-transparent placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
@@ -66,8 +98,10 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Alert />
     </div>
   )
 }
 
-export default page;
+
+export default Page
