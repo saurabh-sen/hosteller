@@ -21,13 +21,15 @@ const Page = () => {
     password: '',
   });
 
+
   // submit function
-  const handleSubmit = () => {
+  const handleSubmit = async(e) => {
+    e.preventDefault();
     const { profile, name, email, phone, rollno, transactionId, password } = signUpData;
     if ( !profile || name === '' || email === '' || phone === '' || rollno === '' || transactionId === '' || password === '') {
       return dispatch(setAlert({ title: "SignUp Failed", message: "Please fill all the fields", type: "error"}))
     } else {
-      // studentsignupdata(signUpData)
+      studentsignupdata(signUpData)
       return dispatch(setAlert({ title: "SignUp Success", message: "You can login when admin confirms your account", type: "success"}))
     }
   }
@@ -89,7 +91,7 @@ const Page = () => {
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">
-                  <button className={styles.login__button} onClick={() => handleSubmit()}>Sign Up</button>
+                  <button className={styles.login__button} onClick={(e)=>handleSubmit(e)}>Sign Up</button>
                 </div>
               </div>
             </div>
@@ -100,5 +102,6 @@ const Page = () => {
     </div>
   )
 }
+
 
 export default Page

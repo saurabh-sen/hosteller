@@ -1,8 +1,17 @@
 import { NextResponse } from 'next/server'
+import clientPromise from '../../../backendComponent/connection'
+
 export async function POST(request) {
   const data = await request.json();
-  // data = { email: 'asdf', password: 'asfaf', role: 'admin' } from admin/mess_incharge login page
-  // data = { email: 'asdf', password: 'asfaf', role: '' } from student login page
-  console.log(data)
-  return NextResponse.json({ status: 200, msg: "hello from backend" })
+  const client = await clientPromise;
+  const db = await client.db('Hosteller_DB');
+  const abc = await db.collection('studentDetails').find({email:data.email,password:data.password}).toArray();
+  if(abc!=null){
+    console.log("Data retrived Successfully");
+    return NextResponse.json({ msg: abc, status: 200 });
+  }
+  else{
+    return NextResponse.json({ msg: "not found", status: 500 });
+  }
+  return abc[0];
 }

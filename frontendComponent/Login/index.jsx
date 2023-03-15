@@ -16,13 +16,19 @@ const Index = ({ studentlogindata, student }) => {
     role: "",
   });
 
-  const submitButton = () => {
-    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === ""){
-      console.log("Please fill all the fields", authInfo);
-      return dispatch(setAlert({ title: "Login Error", message: "Please fill all the fields", type: "error"}));
+  const submitButton = async(e) => {
+    e.preventDefault();
+    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
+    const res=await studentlogindata(authInfo);
+    const data=res.msg[0];
+    if(data!=null){
+      console.log(data);
+      alert("Data Added \n"+JSON.stringify(data));
+     // return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
     }
-    studentlogindata(authInfo);
-    return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
+    else{
+      alert("Credentials not found");
+    }
   }
 
   return (
@@ -61,7 +67,7 @@ const Index = ({ studentlogindata, student }) => {
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">
-                  <button className={styles.login__button} onClick={() => submitButton()}>Submit</button>
+                  <button className={styles.login__button} onClick={(e) => submitButton(e)}>Submit</button>
                 </div>
               </div>
             </div>
