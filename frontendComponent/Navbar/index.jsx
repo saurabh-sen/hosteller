@@ -2,8 +2,8 @@
 import Link from "next/link";
 // import styles from './Navbar.module.css'
 
-const DashboardLink = ({login}) => {
-    switch (login) {
+const DashboardLink = ({isSession}) => {
+    switch (isSession) {
       case "student":
         return <Link href='/dashboard/student' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Dashboard</Link>;
       case "messincharge":
@@ -15,7 +15,7 @@ const DashboardLink = ({login}) => {
     }
 }
 
-function NavBar({login}) {
+function NavBar({isSession}) {
   return (
     <header className="text-gray-400 bg-gray-800 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -28,13 +28,13 @@ function NavBar({login}) {
           <Link href='/' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Home</Link>
           <Link href='/about' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">About</Link>
           <Link href='/facilities' className="mr-5 hover:text-white cursor-pointer hover:drop-shadow-xl shadow-white">Facilities</Link>
-          <DashboardLink login={login} />
+          <DashboardLink isSession={isSession} />
         </nav>
 
         {/* drop down start */}
 
         <div className="relative inline-block text-left group mt-4 md:mt-0">
-        {!login ? <div className="">
+        {!isSession ? <div className="">
             {/* inline css for neophormism button */}
             <button type="button" className="inline-flex items-center border-0 focus:outline-none rounded-xl text-base w-full justify-center gap-x-1.5 px-3 py-2 font-semibold text-gray-400 hover:text-gray-300 focus-within:text-gray-300" id="menu-button" aria-expanded="true" aria-haspopup="true" 
             style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
@@ -58,7 +58,7 @@ function NavBar({login}) {
             </button>
           </div>
           }
-         {!login && <div className="hidden group-hover:block group-focus-within:block absolute right-[-77%] sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1" 
+         {!isSession && <div className="hidden group-hover:block group-focus-within:block absolute right-[-77%] sm:right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1" 
           style={{ boxShadow: "inset 5px 5px 10px #10161e, inset -5px -5px 10px #2e3e52" }}
           >
             <div className="py-1" role="none">

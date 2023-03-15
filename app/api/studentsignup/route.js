@@ -1,26 +1,23 @@
-import  { NextResponse } from 'next/server'
-import clientPromise from '../../../backendComponent/connection'
+import { NextResponse } from "next/server";
+import clientPromise from "../../../backendComponent/connection";
 
-export async function POST(request){
-
-  // thunderclient
-
+export async function POST(request) {
   try {
     const data = await request.json();
-    console.log(data);
     const client = await clientPromise;
-    const db = await client.db('Hosteller_DB');
-    const abc = await db.collection('studentDetails').insertOne(data); 
-    if(abc){
-      console.log("Data saved Successfully");
+    const db = await client.db("Hosteller_DB");
+    const abc = await db.collection("studentDetails").insertOne(data);
+    console.log(abc.insertedId)
+    if (abc.insertedId) {
+      // console.log("Data saved Successfully");
       return NextResponse.json({ msg: "created success", status: 200 });
-    }
-    else{
-      return NextResponse.json({ msg: "something broke at mongodb atlas", status: 503 });
+    } else {
+      return NextResponse.json({
+        msg: "details not saved",
+        status: 500,
+      });
     }
   } catch (error) {
-    return NextResponse.json({ data: error, status: 500 });
+    return NextResponse.json({ msg: error, status: 500 });
   }
-   
-
 }
