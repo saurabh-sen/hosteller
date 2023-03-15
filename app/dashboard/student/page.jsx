@@ -5,8 +5,7 @@ import Events from '@/frontendComponent/Events'
 import React from 'react'
 import Footer from '@/frontendComponent/Footer'
 
-function Dashboard  = ({props}) => {
-  console.log(props);
+const page = () => {
   return (
     <div className='student__dashboard'>
         <NavBar login={true} />

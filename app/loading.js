@@ -1,167 +1,178 @@
 import React from "react";
+import styles from "@/frontendComponent/styles/loading.module.css";
 
 const Loading = () => {
   return (
-    <div>
-      <div className="cloudPane">
-            <div className="stars">
-                <div className="star" id="star1"></div>
-                <div className="star"></div>
-                <div className="star" id="star2"></div>
-                <div className="star"></div>
-                <div className="star" id="star3"></div>
-                <div className="star"></div>
-                <div className="star" id="star4"></div>
-                <div className="star"></div>  
-                <div className="star" id="star5"></div>
-                <div className="star"></div>  
-                <div className="star" id="star6"></div>
-                <div className="star"></div>  
-                <div className="star" id="star7"></div>
-                <div className="star"></div>  
-                <div className="star" id="star8"></div>
-                <div className="star"></div>  
-                <div className="star" id="star9"></div>
-                <div className="star"></div>  
-                <div className="star" id="star10"></div>
-                 <div className="star"></div> 
-                <div className="star" id="star11"></div>
-                 <div className="star"></div> 
-            </div>
-  
-            <div className="bigCloud" id="cloud1">
-                <div className="largeCircle" id="circ1">
-                     
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-            <div className="bigCloud" id="cloud2">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-  
-            <div className="bigCloud" id="cloud3">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-  
-            <div className="bigCloud" id="cloud4">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-  
-            <div className="bigCloud" id="cloud5">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-  
-            <div className="bigCloud" id="cloud6">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-  
-            <div className="bigCloud" id="cloud7">
-                <div className="largeCircle" id="circ1">
-                    <div className="largeCircle" id="circ1shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ2">
-                    <div className="middleCircle" id="circ2shadow"></div>
-                </div>
-                <div className="middleCircle" id="circ3">
-                    <div className="middleCircle" id="circ3shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ4"></div>
-                <div className="smallCircle" id="circ5">
-                    <div className="smallCircle" id="circ5shadow"></div>
-                </div>
-                <div className="smallCircle" id="circ6">
-                    <div className="smallCircle" id="circ6shadow"></div>
-                </div>
-            </div>
-</div>
+    <div className={styles.loading__container}>
+      <div className={styles.container}>
+        <div className={styles.h1Container}>
+          <div className={`${styles.cube} ${styles.h1} ${styles.w1} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w1} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w1} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w2} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w2} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w2} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w3} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w3} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h1} ${styles.w3} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+        </div>
+
+        <div className={styles.h2Container}>
+          <div className={`${styles.cube} ${styles.h2} ${styles.w1} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w1} ${styles.l2}`} >
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w1} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w2} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w2} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w2} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w3} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w3} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h2} ${styles.w3} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+        </div>
+
+        <div className={styles.h3Container}>
+          <div className={`${styles.cube} ${styles.h3} ${styles.w1} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w1} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w1} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w2} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w2} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w2} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w3} ${styles.l1}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w3} ${styles.l2}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+
+          <div className={`${styles.cube} ${styles.h3} ${styles.w3} ${styles.l3}`}>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -13,12 +13,12 @@ export default async function Home() {
   if (!data.isConnected)
     return <h1>Something broke at backend related to mongodb {data.error}</h1>;
 
+    {/*cookies se data nikal k props pass krna hai like:- isSession="student"/"admin"/"messincharge" */}
+  let isSession = "";
   return (
       <Suspense fallback={<Loading />}>
         <main>
-          {/* login as student or admin or messincharge */}
-          <Navbar login={""} />
-          {/* <Alert /> */}
+          <Navbar isSession={isSession} />
           <LandingPage />
           <Gallery />
           <Footer footerbg1={"gray-700"} footerbg2={"gray-800"} />

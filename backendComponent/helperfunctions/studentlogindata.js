@@ -1,4 +1,5 @@
-export const studentlogindata =async (authInfo) => {
+export const studentlogindata = async (authInfo) => {
+  try {
     const res=await fetch("/api/studentlogin", {
       method: "POST",
       headers: {
@@ -6,10 +7,13 @@ export const studentlogindata =async (authInfo) => {
       },
       body: JSON.stringify(authInfo),
     })
-    // .then((res) => res.json())
-    // .then((data) => data)
-    // .catch((err) => console.log(err));
-
-    let data=await res.json();
+    let data = await res.json();
+    console.log(data);
     return data;
+  } catch (error) {
+    return {
+      status : 500,
+      msg: error,
+    };
   }
+}
