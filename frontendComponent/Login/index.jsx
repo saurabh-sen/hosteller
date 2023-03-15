@@ -3,12 +3,15 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './login.module.css'
 import Alert from "@/frontendComponent/Alert"
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
+import { studentlogindata } from '@/backendComponent/helperfunctions/studentlogindata'
+import { adminlogindata } from '@/backendComponent/helperfunctions/adminlogindata'
+import { messinchargelogindata } from '@/backendComponent/helperfunctions/messinchargelogindata'
 
-const index = ({ student }) => {
+const Index = ({ student }) => {
   const dispatch = useDispatch();
-   const [authInfo, setAuthInfo] = useState({
+  const [authInfo, setAuthInfo] = useState({
     email: "",
     password: "",
     role: "",
@@ -16,32 +19,46 @@ const index = ({ student }) => {
 
   const submitButton = async (e) => {
     e.preventDefault();
-    if(!student ){
-    // for admin login
-      if(authInfo.role==="admin" && authInfo.email==="admin@hosteller" && authInfo.password=== "password"){
-        alert("admin logged in");
+    // to check if the user is admin or messincharge or student
+    if (!student) {
+      // for admin/messincharge login
+      if (authInfo.role === "" || authInfo.email === "" || authInfo.password === "") return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error" }));
+      else if (authInfo.role === "admin") {
+        // to respond to the user that data is being fetched
+        dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info" }));
+
+        // to fetch data from the backend for ADMIN
+        const data = await adminlogindata(authInfo);
+        // to check if data is fetched successfully or not
+        if (data.status === 200) return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success" }));
+        else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. Server said:- ${data.msg}`, type: "error" }));
       }
-      else if(authInfo.role==="messincharge" && authInfo.email==="messincharge@hosteller" && authInfo.password=== "password"){
-        alert("messincharge logged in");
-      }
-      else{
-        alert("wrong credentials");
+      else {
+        // to respond to the user that data is being fetched
+        dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info" }));
+
+        // to fetch data from the backend for MESSINCHARGE
+        const data = await messinchargelogindata(authInfo);
+        // to check if data is fetched successfully or not
+        if (data.status === 200) return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success" }));
+        else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. Server said:- ${data.msg}`, type: "error" }));
       }
     }
-    else{
     // for student login
+    else {
+      // for student login
       // to check every field is filled or not
-      if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")
-      return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error"}));
+      if ((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")
+        return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error" }));
 
       // to respond to the user that data is being fetched
-      dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info"}));
+      dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info" }));
 
       // to fetch data from the backend
       const data = await studentlogindata(authInfo);
       // to check if data is fetched successfully or not
-      if(data.status === 200)return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success"}));
-      else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. More info:- ${data.msg}`, type: "error"}));
+      if (data.status === 200) return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success" }));
+      else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. More info:- ${data.msg}`, type: "error" }));
     }
   }
 
@@ -57,27 +74,27 @@ const index = ({ student }) => {
               <h1 className="text-2xl font-semibold">WelCome back, Please enter your credentials below</h1>
               {
                 student ? <p className="text-sm font-semibold">Don&apos;t have an account? <Link href='/student/signup' className='underline text-[#0048b8]'>Click Here to apply!</Link></p>
-                : 
-                ""
+                  :
+                  ""
               }
             </div>
             <div className="divide-y divide-gray-200">
               <form onSubmit={(e) => submitButton(e)} className="py-8 text-base leading-6 space-y-8 text-gray-700 sm:text-lg sm:leading-7">
-                { !student &&
-                <div className="relative">
-                  <select onChange={(e) => setAuthInfo((prev) => prev = {...prev, role:e.target.selectedOptions[0].value})} autoComplete="off" id="role" name="role" className=" text-gray-600 bg-transparent  peer placeholder-transparent h-10 w-full border-2 border-gray-100 focus:outline-none focus:borer-rose-600" multiple={false} defaultValue={"select"} >
-                    <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' disabled value="select">Please select a role...</option>
-                    <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' value="admin">Admin</option>
-                    <option className='bg-[#edcdb3] hover:bg-[#c4b0a0]' value="messincharge">Mess Incharge</option>
-                  </select>
-                </div>
+                {!student &&
+                  <div className="relative">
+                    <select onChange={(e) => setAuthInfo((prev) => prev = { ...prev, role: e.target.selectedOptions[0].value })} autoComplete="off" id="role" name="role" className=" text-gray-600 bg-transparent  peer placeholder-transparent h-10 w-full border-2 border-gray-100 focus:outline-none focus:borer-rose-600" multiple={false} defaultValue={"select"} >
+                      <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' disabled value="select">Please select a role...</option>
+                      <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' value="admin">Admin</option>
+                      <option className='bg-[#edcdb3] hover:bg-[#c4b0a0]' value="messincharge">Mess Incharge</option>
+                    </select>
+                  </div>
                 }
                 <div className="relative">
-                  <input onChange={(e) => setAuthInfo((prev) => prev = {...prev, email:e.target.value})} autoComplete="off" id="email" name="email" type="text" className="bg-transparent  peer placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-600 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
+                  <input onChange={(e) => setAuthInfo((prev) => prev = { ...prev, email: e.target.value })} autoComplete="off" id="email" name="email" type="text" className="bg-transparent  peer placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-600 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
                   <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
                 </div>
                 <div className="relative">
-                  <input onChange={(e) => setAuthInfo((prev) => prev = {...prev, password:e.target.value})} autoComplete="off" id="password" name="password" type="password" className="peer bg-transparent placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-600 focus:outline-none focus:borer-rose-600" placeholder="Password" />
+                  <input onChange={(e) => setAuthInfo((prev) => prev = { ...prev, password: e.target.value })} autoComplete="off" id="password" name="password" type="password" className="peer bg-transparent placeholder-transparent h-10 w-full border-b-2 border-gray-100 text-gray-600 focus:outline-none focus:borer-rose-600" placeholder="Password" />
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">

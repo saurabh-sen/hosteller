@@ -7,7 +7,7 @@ export async function POST(request) {
     const client = await clientPromise;
     const db = await client.db("Hosteller_DB");
     const abc = await db
-      .collection("studentDetails")
+      .collection("messInchargeDetails")
       .find({ email: data.email, password: data.password })
       .toArray();
     if (abc[0] != null) {
