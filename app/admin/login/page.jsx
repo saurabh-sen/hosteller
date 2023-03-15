@@ -17,7 +17,6 @@ const Page = () => {
   // }
   return (
     <>
-      <Login postData={postData} student={0} />
       <Login student={0} />
       {/* <Login postData={postData} student={0} /> */}
     </>
