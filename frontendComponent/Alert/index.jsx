@@ -9,7 +9,7 @@ const AlertFunction = (type, dispatch, alertState) => {
             return (
                 <div className="flex flex-col justify-center">
                     <div
-                        className="fixed bottom-3 right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-green-100 bg-clip-padding text-sm text-green-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+                        className="fixed bottom-0 sm:bottom-3 ring-0 sm:right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-green-100 bg-clip-padding text-sm text-green-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
                         id="static-example"
                         role="alert"
                         aria-live="assertive"
@@ -75,7 +75,7 @@ const AlertFunction = (type, dispatch, alertState) => {
             return (
                 <div className="flex flex-col justify-center">
                     <div
-                        className="fixed bottom-3 right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-red-200 bg-clip-padding text-sm text-red-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+                        className="fixed bottom-0 sm:bottom-3 ring-0 sm:right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-red-200 bg-clip-padding text-sm text-red-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
                         id="static-example"
                         role="alert"
                         aria-live="assertive"
@@ -141,7 +141,7 @@ const AlertFunction = (type, dispatch, alertState) => {
             return (
                 <div className="flex flex-col justify-center">
                     <div
-                        className="fixed bottom-3 right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-blue-200 bg-clip-padding text-sm text-blue-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+                        className="fixed bottom-0 sm:bottom-3 ring-0 sm:right-6 z-10 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-blue-200 bg-clip-padding text-sm text-blue-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
                         id="static-example"
                         role="alert"
                         aria-live="assertive"
