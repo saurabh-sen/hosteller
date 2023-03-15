@@ -16,19 +16,20 @@ const Index = ({ studentlogindata, student }) => {
     role: "",
   });
 
-  const submitButton = async(e) => {
+  const submitButton = async (e) => {
     e.preventDefault();
-    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")return alert("Please fill all the fields");
-    const res=await studentlogindata(authInfo);
-    const data=res.msg[0];
-    if(data!=null){
-      console.log(data);
-      alert("Data Added \n"+JSON.stringify(data));
-     // return dispatch(setAlert({ title: "Login success", message: "You'll be redirected to dashboard", type: "success"}));
-    }
-    else{
-      alert("Credentials not found");
-    }
+    // to check every field is filled or not
+    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")
+    return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error"}));
+
+    // to respond to the user that data is being fetched
+    dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info"}));
+
+    // to fetch data from the backend
+    const data = await studentlogindata(authInfo);
+    // to check if data is fetched successfully or not
+    if(data.status === 200)return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success"}));
+    else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. More info:- ${data.msg}`, type: "error"}));
   }
 
   return (
@@ -48,7 +49,7 @@ const Index = ({ studentlogindata, student }) => {
               }
             </div>
             <div className="divide-y divide-gray-200">
-              <div className="py-8 text-base leading-6 space-y-8 text-gray-700 sm:text-lg sm:leading-7">
+              <form onSubmit={(e) => submitButton(e)} className="py-8 text-base leading-6 space-y-8 text-gray-700 sm:text-lg sm:leading-7">
                 { !student &&
                 <div className="relative">
                   <select onChange={(e) => setAuthInfo((prev) => prev = {...prev, role:e.target.selectedOptions[0].value})} autoComplete="off" id="role" name="role" className=" text-gray-600 bg-transparent  peer placeholder-transparent h-10 w-full border-2 border-gray-100 focus:outline-none focus:borer-rose-600" multiple={false} >
@@ -67,9 +68,9 @@ const Index = ({ studentlogindata, student }) => {
                   <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                 </div>
                 <div className="relative">
-                  <button className={styles.login__button} onClick={(e) => submitButton(e)}>Submit</button>
+                  <button className={`${styles.login__button} bg-[#374151ba]`} type='submit' onClick={(e) => submitButton(e)}>Submit</button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

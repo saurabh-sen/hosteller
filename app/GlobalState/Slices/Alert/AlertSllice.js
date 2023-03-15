@@ -6,7 +6,7 @@ export const AlertSlice = createSlice({
   initialState: {
     title: 'Alert Title',
     message: 'Alert Message',
-    type: 'info',
+    type: 'none',
   },
   reducers: {
     setAlert: (state, action) => {
