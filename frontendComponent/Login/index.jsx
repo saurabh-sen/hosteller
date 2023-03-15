@@ -6,11 +6,9 @@ import Alert from "@/frontendComponent/Alert"
 import { useDispatch} from 'react-redux'
 import { setAlert } from '@/app/GlobalState/Slices/Alert/AlertSllice'
 
-const Index = ({ studentlogindata, student }) => {
-
+const index = ({ student }) => {
   const dispatch = useDispatch();
-
-  const [authInfo, setAuthInfo] = useState({
+   const [authInfo, setAuthInfo] = useState({
     email: "",
     password: "",
     role: "",
@@ -18,18 +16,33 @@ const Index = ({ studentlogindata, student }) => {
 
   const submitButton = async (e) => {
     e.preventDefault();
-    // to check every field is filled or not
-    if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")
-    return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error"}));
+    if(!student ){
+    // for admin login
+      if(authInfo.role==="admin" && authInfo.email==="admin@hosteller" && authInfo.password=== "password"){
+        alert("admin logged in");
+      }
+      else if(authInfo.role==="messincharge" && authInfo.email==="messincharge@hosteller" && authInfo.password=== "password"){
+        alert("messincharge logged in");
+      }
+      else{
+        alert("wrong credentials");
+      }
+    }
+    else{
+    // for student login
+      // to check every field is filled or not
+      if((!student && authInfo.role === "") || authInfo.email === "" || authInfo.password === "")
+      return dispatch(setAlert({ title: "Login Failed ⚠", message: "Please fill all the fields! 🤔", type: "error"}));
 
-    // to respond to the user that data is being fetched
-    dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info"}));
+      // to respond to the user that data is being fetched
+      dispatch(setAlert({ title: "Please wait... 🥺", message: "Retrieving data, this may take some moments.🤗", type: "info"}));
 
-    // to fetch data from the backend
-    const data = await studentlogindata(authInfo);
-    // to check if data is fetched successfully or not
-    if(data.status === 200)return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success"}));
-    else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. More info:- ${data.msg}`, type: "error"}));
+      // to fetch data from the backend
+      const data = await studentlogindata(authInfo);
+      // to check if data is fetched successfully or not
+      if(data.status === 200)return dispatch(setAlert({ title: "Login success 😃", message: "You'll be redirected to dashboard 🚀", type: "success"}));
+      else return dispatch(setAlert({ title: "Login Failed 🥺", message: `Credentials not found, Please sign up first! 🤔. More info:- ${data.msg}`, type: "error"}));
+    }
   }
 
   return (
