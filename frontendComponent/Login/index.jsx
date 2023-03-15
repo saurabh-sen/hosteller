@@ -52,8 +52,8 @@ const Index = ({ studentlogindata, student }) => {
               <form onSubmit={(e) => submitButton(e)} className="py-8 text-base leading-6 space-y-8 text-gray-700 sm:text-lg sm:leading-7">
                 { !student &&
                 <div className="relative">
-                  <select onChange={(e) => setAuthInfo((prev) => prev = {...prev, role:e.target.selectedOptions[0].value})} autoComplete="off" id="role" name="role" className=" text-gray-600 bg-transparent  peer placeholder-transparent h-10 w-full border-2 border-gray-100 focus:outline-none focus:borer-rose-600" multiple={false} >
-                    <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' selected disabled value="select">Please select a role...</option>
+                  <select onChange={(e) => setAuthInfo((prev) => prev = {...prev, role:e.target.selectedOptions[0].value})} autoComplete="off" id="role" name="role" className=" text-gray-600 bg-transparent  peer placeholder-transparent h-10 w-full border-2 border-gray-100 focus:outline-none focus:borer-rose-600" multiple={false} defaultValue={"select"} >
+                    <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' disabled value="select">Please select a role...</option>
                     <option className='bg-[#edcdb3] hover:bg-[#d8c0ad]' value="admin">Admin</option>
                     <option className='bg-[#edcdb3] hover:bg-[#c4b0a0]' value="messincharge">Mess Incharge</option>
                   </select>
